@@ -8,14 +8,17 @@ namespace SimpleCommerce.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
-        SimpleCommerceContext ctx = new SimpleCommerceContext();
+        private SimpleCommerceContext _ctx;
 
 
-
+        public CategoryRepository(SimpleCommerceContext ctx)
+        {
+            _ctx = ctx;
+        }
 
         public ICollection<Category> Get()
         {
-            var data = ctx.Categories.ToList();
+            var data = _ctx.Categories.ToList();
 
             return data;
         }
