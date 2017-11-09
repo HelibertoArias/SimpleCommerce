@@ -13,9 +13,9 @@ namespace SimpleCommerce.Repository.Repositories.Interfaces
 
         void Create(Product item);
 
-        void Update(long id);
+        void Update(Product id);
 
-        Product Delete(long id);
+        void Delete(long id);
 
     }
 

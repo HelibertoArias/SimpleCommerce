@@ -1,35 +1,45 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using SimpleCommerce.Model;
 using SimpleCommerce.Repository.Repositories.Interfaces;
+using SimpleCommerce.Data;
+using System.Data.Entity;
 
 namespace SimpleCommerce.Repository
 {
     public class ProductRepository : IProductRepository
     {
+
+        SimpleCommerceContext ctx = new SimpleCommerceContext();
+
+
         public void Create(Product item)
         {
-            throw new NotImplementedException();
+            ctx.Products.Add(item);
         }
 
-        public Product Delete(long id)
+        public void Delete(long id)
         {
-            throw new NotImplementedException();
+            var item = Find(id);
+            ctx.Entry(item).State = EntityState.Modified;
         }
 
         public Product Find(long id)
         {
-            throw new NotImplementedException();
+            var item = ctx.Products.Find(id);
+            return item;
         }
 
         public ICollection<Product> Get()
         {
-            throw new NotImplementedException();
+            var item = ctx.Products.Where(x=>x.Deleted==true).ToList();
+            return item;
         }
 
-        public void Update(long id)
+        public void Update(Product item)
         {
-            throw new NotImplementedException();
+            ctx.Entry(item).State = EntityState.Modified;
         }
     }
 }
