@@ -57,6 +57,7 @@
     <Compile Include="Maps\AutomapperConfiguration.cs" />
     <Compile Include="Maps\CategoryProfile.cs" />
     <Compile Include="Maps\ProductProfile.cs" />
+    <Compile Include="ProductServiceMemory.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />

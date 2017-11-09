@@ -31,7 +31,9 @@ namespace SimpleCommerce.WebApp.App_Start
 
 
             //-> Services
-            builder.RegisterType<ProductService>().As<IProductService>();
+            // builder.RegisterType<ProductService>().As<IProductService>();
+            builder.RegisterType<ProductServiceMemory>().As<IProductService>();
+
 
 
 
