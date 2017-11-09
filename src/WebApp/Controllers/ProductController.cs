@@ -11,11 +11,31 @@ namespace SimpleCommerce.WebApp.Controllers
 
         public ProductController(IProductService service)
         {
-            _service = service;
+              _service = service;
+
+
         }
+
+        public ActionResult ChangeSource()
+        {
+
+
+
+            if ((string)System.Web.HttpContext.Current.Session["InMemory"] == null)
+
+                System.Web.HttpContext.Current.Session["InMemory"] = string.Empty;
+            else
+                System.Web.HttpContext.Current.Session["InMemory"] = null;
+
+
+                return RedirectToAction("Index");
+        }
+         
+
         // GET: ProductController
         public ActionResult Index()
         {
+           
             var items = _service.GetProducts();
             return View(items);
         }

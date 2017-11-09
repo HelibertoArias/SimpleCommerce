@@ -9,6 +9,16 @@
 
 
 @{
+    if (Model.Products.Count == 0)
+    {
+        <div class="alert alert-info">
+            <strong>Info!</strong> You need to add products.
+
+            @Html.ActionLink("Create", "Create", "Product")
+        </div>
+    }
+
+
     foreach (var item in Model.Products)
     {
         <div class="card" style="width: 20rem; margin-bottom:20px; padding:5px ;border:solid 1px #b5b5b5 ">
@@ -21,9 +31,6 @@
                 @Html.ActionLink("Delete", "Delete", "Product", new { id = item.Id }, new { @class = "card-link" })
             </div>
         </div>
-        
-        
-        
     }
 }
 

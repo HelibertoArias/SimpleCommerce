@@ -15,29 +15,15 @@ namespace SimpleCommerce.WebApp.App_Start
         public static void Register()
         {
             var builder = new ContainerBuilder();
-            // Register your Web API controllers.
+
+            // Register your Web controllers.
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-
-            //-> Repositories
-            //builder.RegisterType<ProductRepository>().As<IProductRepository>();
-            //builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
-            ////builder.RegisterGeneric(typeof(IEntityBaseRepository<>))
-            //    .As(typeof(IEntityBaseRepository<>)).InstancePerRequest();
-
-
-            //-> UoW
-            //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
-            //builder.RegisterType<DbFactory>().As<IDbFactory>();
-
 
             //-> Services
             // builder.RegisterType<ProductService>().As<IProductService>();
-            builder.RegisterType<ProductServiceMemory>().As<IProductService>();
+            //builder.RegisterType<ProductServiceMemory>().As<IProductService>();
 
-
-
-
-
+            builder.Register(c => GetService()).As<IProductService>();
 
             //Register repositories and services.
             Container = builder.Build();
@@ -46,6 +32,18 @@ namespace SimpleCommerce.WebApp.App_Start
             DependencyResolver.SetResolver(new AutofacDependencyResolver(Container));
 
         }
+
+        public static IProductService GetService()
+        {
+
+            if( System.Web.HttpContext.Current.Session["InMemory"] != null)
+                return new ProductService();
+            else
+               return new ProductServiceMemory();
+
+        }
+
+
     }
 
 }
