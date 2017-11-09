@@ -1,0 +1,31 @@
+﻿
+@model SimpleCommerce.Service.ViewModel.ListProductViewModel
+@{
+    ViewBag.Title = "Product List";
+}
+
+<h2>Products List</h2>
+
+
+
+@{
+    foreach (var item in Model.Products)
+    {
+        <div class="card" style="width: 20rem; margin-bottom:20px; padding:5px ;border:solid 1px #b5b5b5 ">
+            <div class="card-body">
+                <h4 class="card-title">@item.Title</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Price $@item.Price</h6>
+                <p class="card-text">Number Ref. @item.Number</p>               
+
+                @Html.ActionLink("Edit", "Edit", "Product", new { id= item.Id}, new { @class = "card-link" }) | 
+                @Html.ActionLink("Delete", "Delete", "Product", new { id = item.Id }, new { @class = "card-link" })
+            </div>
+        </div>
+        
+        
+        
+    }
+}
+
+ 
+

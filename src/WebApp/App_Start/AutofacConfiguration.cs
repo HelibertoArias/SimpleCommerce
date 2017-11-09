@@ -3,8 +3,7 @@ using Autofac.Integration.Mvc;
 using SimpleCommerce.Repository;
 using SimpleCommerce.Repository.Repositories.Interfaces;
 using SimpleCommerce.Service;
-
-
+using System.Web.Mvc;
 using WebApp;
 
 namespace SimpleCommerce.WebApp.App_Start
@@ -40,6 +39,10 @@ namespace SimpleCommerce.WebApp.App_Start
 
             //Register repositories and services.
             Container = builder.Build();
+
+            // Set MVC DI resolver to use our Autofac container
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(Container));
+
         }
     }
 

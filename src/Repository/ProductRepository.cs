@@ -38,7 +38,7 @@ namespace SimpleCommerce.Repository
 
         public ICollection<Product> Get()
         {
-            var item = _ctx.Products.Where(x=>x.Deleted==true).ToList();
+            var item = _ctx.Products.Where(x=>x.Deleted==false).ToList();
             return item;
         }
 
