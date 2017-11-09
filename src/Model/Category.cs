@@ -1,8 +1,9 @@
-﻿ 
+﻿
 
+using SimpleCommerce.Model.Base;
 using System.Collections.Generic;
 
-namespace SimpleCommerce.Model.Base
+namespace SimpleCommerce.Model
 {
     public class Category: IEntityBase
     {

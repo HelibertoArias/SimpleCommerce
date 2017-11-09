@@ -1,7 +1,9 @@
 ﻿
- 
 
-namespace SimpleCommerce.Model.Base
+
+using SimpleCommerce.Model.Base;
+
+namespace SimpleCommerce.Model
 {
     public class Product : IEntityBase
     {
