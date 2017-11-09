@@ -7,8 +7,8 @@
     <ProjectGuid>{EAB9236F-44FB-43E7-8787-F48BC1C4BDC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Model</RootNamespace>
-    <AssemblyName>Model</AssemblyName>
+    <RootNamespace>SimpleCommerce.Model</RootNamespace>
+    <AssemblyName>SimpleCommerce.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

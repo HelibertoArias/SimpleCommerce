@@ -7,8 +7,8 @@
     <ProjectGuid>{BBA9F182-7109-43E7-B7C1-184D212FECF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data</RootNamespace>
-    <AssemblyName>Data</AssemblyName>
+    <RootNamespace>SimpleCommerce.Data</RootNamespace>
+    <AssemblyName>SimpleCommerce.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{4C9823D5-D267-439E-9A44-7C89AF070961}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Service</RootNamespace>
-    <AssemblyName>Service</AssemblyName>
+    <RootNamespace>SimpleCommerce.Service</RootNamespace>
+    <AssemblyName>SimpleCommerce.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
