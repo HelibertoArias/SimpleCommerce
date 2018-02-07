@@ -1,5 +1,4 @@
-﻿using Autofac.Integration.Mvc;
-using SimpleCommerce.Service.Maps;
+﻿using SimpleCommerce.Service.Maps;
 using SimpleCommerce.WebApp.App_Start;
 using System.Web.Mvc;
 using System.Web.Optimization;
